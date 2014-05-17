@@ -22,11 +22,11 @@ module CarrierWave
         # require "pry"; binding.pry
         type = uploader.file.content_type
         blob = Base64.encode64(self.uploader.file.read)
-        uploader.model.update_columns picture: "data:#{type};base64,#{blob}"
+        uploader.model.update_columns self.uploader.mounted_as => "data:#{type};base64,#{blob}"
       end
 
       def retrieve!(identifier=nil)
-        Content.new uploader.model.read_attribute(:picture)
+        Content.new uploader.model.read_attribute(self.uploader.mounted_as)
       end
     end
 
