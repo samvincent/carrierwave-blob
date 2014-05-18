@@ -10,7 +10,7 @@ module CarrierWave
         end
 
         def url(options={})
-          @content    
+          @content
         end
 
         def to_s
@@ -30,5 +30,11 @@ module CarrierWave
       end
     end
 
+  end
+end
+
+class CarrierWaveBlobRailtie < Rails::Railtie
+  generators do
+    require 'carrierwave-blob-generator'
   end
 end
