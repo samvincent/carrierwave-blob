@@ -7,7 +7,7 @@ uploads in the database, eg. on platforms with ephemeral filesystems like Heroku
 
 ```ruby
 # In: Gemfile
-gem 'carrierwave-blob', git: "https://gist.github.com/f1dc8c75d67b92b23a55.git"
+gem 'carrierwave-blob', github: "samvincent/carrierwave-blob"
 ```
 
 ## Usage
@@ -33,4 +33,4 @@ rake db:migrate
 
 -----
 
-Created during [RailsGirls Prague](http://railsgirls.cz)
+This is a fork of [a found gist](http://gist.stutostu.com/karmi/f1dc8c75d67b92b23a55) by @karmi.
