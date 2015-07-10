@@ -16,10 +16,13 @@ module CarrierWave
         def to_s
           @content
         end
+
+        def content_type
+          @content.scan(/\Adata:(.+);base64/).flatten.pop
+        end
       end
 
       def store!(file)
-        # require "pry"; binding.pry
         type = uploader.file.content_type
         blob = Base64.encode64(self.uploader.file.read)
         uploader.model.update_columns self.uploader.mounted_as => "data:#{type};base64,#{blob}"
