@@ -20,6 +20,10 @@ module CarrierWave
         def content_type
           @content.scan(/\Adata:(.+);base64/).flatten.pop
         end
+
+        def delete
+          # Nothing required here
+        end
       end
 
       def store!(file)
